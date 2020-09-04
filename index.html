@@ -4,7 +4,65 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>activello</title>
+        <link rel="stylesheet" href="./css/all.min.css" />
         <link rel="stylesheet" href="./css/main.css" />
     </head>
-    <body></body>
+    <body>
+        <!-- --- headder --- -->
+        <header>
+            <!-- --- nav --- -->
+            <div class="container">
+                <nav class="d-flex justify-between relative">
+                    <div><i class="fas fa-bars menu pointer"></i></div>
+                    <ul class="nav-links absolute-m capitalize">
+                        <li><a href="#1" class="active">home</a></li>
+                        <li class="relative">
+                            <span
+                                >about the tests
+                                <i class="fas fa-angle-down d-none-m"></i
+                            ></span>
+                            <ul class="dropdown uppercase absolute-l">
+                                <li><a href="#1">Lorem.</a></li>
+                                <li><a href="#1">Lorem, ipsum.</a></li>
+                                <li><a href="#1">Lorem, ipsum dolor.</a></li>
+                                <li><a href="#1">Lorem, ipsum.</a></li>
+                                <li><a href="#1">Lorem.</a></li>
+                            </ul>
+                        </li>
+                        <li class="relative">
+                            <span
+                                >levels
+                                <i class="fas fa-angle-down d-none-m"></i
+                            ></span>
+                            <ul class="dropdown uppercase absolute-l">
+                                <li><a href="#1">level 1</a></li>
+                                <li><a href="#1">level 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#1">shop</a></li>
+                    </ul>
+                    <form class="d-flex align-center">
+                        <input type="text" placeholder="search" />
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </nav>
+            </div>
+            <!-- xxx nav xxx -->
+            <!-- --- banner --- -->
+            <section class="banner text-center">
+                <div class="container">
+                    <h1>
+                        <a href="#1">
+                            <img src="./images/logo.png" alt="Activello"
+                        /></a>
+                    </h1>
+                    <p>Just another colorlib.com site</p>
+                </div>
+            </section>
+        </header>
+        <!-- xxx headder xxx -->
+    </body>
+    <script src="./js/app.js"></script>
 </html>

@@ -1,6 +1,165 @@
 @import "./reset.css";
-@import "./base.css";
-@import "./theam.css";
 @import "./utilities.css";
-@import "./modules.css";
-@import "./layout.css";
+
+/*nnav: 'Montserrat', sans-serif; */
+/*p: 'Lora', serif */
+/* btn 'Maven Pro', sans-serif */
+/* font-family: 'Lora', serif;
+font-family: 'Maven Pro', sans-serif;
+font-family: 'Montserrat', sans-serif; */
+/* main color */
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Maven+Pro&family=Montserrat&display=swap");
+:root {
+    --main-color: #a161bf;
+    --main-black: #1c202a;
+    --sub-black: #696969;
+    --border-gray: #6364671c;
+}
+body {
+    color: var(--sub-black);
+}
+a {
+    color: var(--main-black);
+}
+a:hover,
+a:focus,
+li:hover,
+li:focus,
+.active,
+.menu:hover {
+    color: var(--main-color);
+    text-decoration: none;
+}
+/* --- nav --- */
+nav {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    border-bottom: 1px var(--border-gray) solid;
+    color: var(--main-black);
+}
+
+nav > ul {
+    padding: 0;
+    font-weight: 900;
+    margin: 10px 0;
+}
+nav ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+nav ul li {
+    display: flex;
+    flex-direction: column;
+}
+nav button {
+    background: transparent;
+    border: none;
+}
+
+.container {
+    width: 1024px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+nav .fa-bars {
+    font-size: 1.5rem;
+}
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+nav ul.dropdown {
+    font-weight: 400;
+    background-color: #fff;
+    color: var(--sub-black);
+}
+nav form button,
+nav form button:focus {
+    margin-left: 5x;
+    border-radius: 5px;
+    outline: none;
+}
+nav form button:hover {
+    color: var(--main-color);
+}
+nav form input {
+    padding: 0.2rem 0.5rem;
+}
+nav form input,
+nav form button {
+    color: var(--sub-black);
+}
+nav form input:focus {
+    border-color: var(--main-color);
+    outline-color: var(--main-color);
+}
+@media (min-width: 781px) {
+    .menu {
+        display: none;
+    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+    nav .nav-links > li + li {
+        margin-left: 30px;
+    }
+    nav ul.dropdown {
+        top: 21px;
+        padding-left: 0;
+        min-width: 100px;
+        display: none;
+    }
+    nav ul.dropdown li {
+        padding: 10px 0;
+    }
+    nav ul.dropdown li + li {
+        border-top: 1px solid;
+    }
+    nav li:hover ul.dropdown {
+        display: block;
+    }
+}
+@media (max-width: 780px) {
+    nav ul > li + li {
+        margin-top: 10px;
+    }
+    .nav-links {
+        padding-top: 10px;
+        top: 40px;
+        font-size: 1rem;
+        overflow: hidden;
+        /* height: 408px; */
+        height: 0;
+        transition: 0.4s;
+    }
+    nav ul.dropdown {
+        padding: 10px 30px;
+    }
+    .show-list {
+        height: 408px;
+    }
+}
+@media (max-width: 350px) {
+    nav input {
+        width: 100px;
+    }
+}
+/* xxx nav xxx */
+/* --- banner --- */
+.banner {
+    padding: 3rem 0;
+}
+.banner h1 {
+    font-size: 3rem;
+    font-weight: 100;
+    font-family: "Montserrat", sans-serif;
+}
+.banner h1 a {
+    color: var(--main-color);
+    text-indent: -99999px;
+}
