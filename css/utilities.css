@@ -1,9 +1,21 @@
+/* display */
+.d-none {
+    display: none;
+}
+@media (max-width: 780px) {
+    .d-none-m {
+        display: none;
+    }
+}
 /* flex */
 .d-flex {
     display: flex;
 }
 .justify-between {
     justify-content: space-between;
+}
+.justify-center {
+    justify-content: center;
 }
 .flex-column {
     flex-direction: column;
@@ -18,9 +30,10 @@
 .relative {
     position: relative;
 }
-.pointer {
-    cursor: pointer;
+.absolute {
+    position: absolute;
 }
+
 @media (max-width: 780px) {
     .absolute-m {
         position: absolute;
@@ -43,4 +56,26 @@
 }
 .text-center {
     text-align: center;
+}
+/* cursor */
+.pointer {
+    cursor: pointer;
+}
+/* spacing */
+.spacing > * + * {
+    margin: 10px 0;
+}
+/* padding */
+.padding-1 {
+    padding: 1em 0;
+}
+.padding-2 {
+    padding: 2em 0;
+}
+.padding-3 {
+    padding: 3em 0;
+}
+
+.padding-top-3 {
+    padding-top: 3em;
 }

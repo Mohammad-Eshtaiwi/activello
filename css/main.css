@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Maven+Pro&family=Montserrat&display=swap");
 @import "./reset.css";
 @import "./utilities.css";
+@import "./animation.css";
+@import "./modules.css";
 
 /*nnav: 'Montserrat', sans-serif; */
 /*p: 'Lora', serif */
@@ -7,13 +10,13 @@
 /* font-family: 'Lora', serif;
 font-family: 'Maven Pro', sans-serif;
 font-family: 'Montserrat', sans-serif; */
-/* main color */
-@import url("https://fonts.googleapis.com/css2?family=Lora&family=Maven+Pro&family=Montserrat&display=swap");
+
 :root {
     --main-color: #a161bf;
     --main-black: #1c202a;
     --sub-black: #696969;
     --border-gray: #6364671c;
+    --main-gray: #dedede;
 }
 body {
     color: var(--sub-black);
@@ -30,12 +33,17 @@ li:focus,
     color: var(--main-color);
     text-decoration: none;
 }
+img {
+    width: 100%;
+}
+
 /* --- nav --- */
 nav {
     font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
     border-bottom: 1px var(--border-gray) solid;
     color: var(--main-black);
+    z-index: 10;
 }
 
 nav > ul {
@@ -46,6 +54,7 @@ nav > ul {
 nav ul {
     list-style-type: none;
     width: 100%;
+    background-color: #fff;
 }
 
 nav ul li {
@@ -56,11 +65,22 @@ nav button {
     background: transparent;
     border: none;
 }
-
+.logo {
+    max-width: 207px;
+}
 .container {
-    width: 1024px;
-    max-width: 100%;
+    max-width: 1024px;
+
+    width: 95%;
     margin: 0 auto;
+}
+@media (max-width: 950px) {
+    .container {
+        max-width: 730px;
+
+        width: 95%;
+        margin: 0 auto;
+    }
 }
 
 nav .fa-bars {
@@ -125,6 +145,10 @@ nav form input:focus {
     }
 }
 @media (max-width: 780px) {
+    nav ul {
+        left: 0;
+        right: 0;
+    }
     nav ul > li + li {
         margin-top: 10px;
     }
@@ -161,5 +185,200 @@ nav form input:focus {
 }
 .banner h1 a {
     color: var(--main-color);
-    text-indent: -99999px;
+    font-size: 0.8rem;
+}
+/* --- slider --- */
+
+.slider img {
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    height: auto;
+}
+.slider .content {
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.slider .content a {
+    color: #fff;
+    font-family: "Lora", serif;
+}
+.slider .content a:hover {
+    color: var(--main-color);
+}
+.slider .content a {
+    font-size: 1rem;
+    display: block;
+}
+
+/* xxx slider xxx */
+/* main */
+main {
+    width: 60%;
+}
+@media (max-width: 950px) {
+    main,
+    aside {
+        width: 100%;
+    }
+    .d-block-es {
+        display: block !important;
+    }
+}
+
+/* formats */
+.format {
+    border-bottom: 1px solid var(--main-gray);
+    padding-bottom: 3em;
+}
+.format + .format {
+    padding-top: 3em;
+}
+main .title {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+main .templates .title {
+    margin: 1rem 0;
+}
+.format p {
+    margin: 1em 0;
+}
+.format p:last-of-type {
+    text-align: left;
+}
+
+.format a {
+    border-left: 2px solid var(--main-black);
+    border-right: 2px solid var(--main-black);
+    padding: 0 1em;
+}
+
+/* grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) ); */
+.templates {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
+    gap: 30px;
+    padding: 3em 0;
+}
+.templates a {
+    font-family: "Lora", serif;
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    display: block;
+}
+/* aside */
+@media (max-width: 950px) {
+    aside {
+        width: 100% !important;
+    }
+    aside .about-me img {
+        height: auto !important;
+    }
+}
+aside {
+    width: 30%;
+}
+aside .title {
+    margin-bottom: 1.5em;
+    font-size: 1rem;
+}
+aside .title-effect-line::before {
+    width: 40px;
+    left: 0;
+    transform: translateX(0%);
+}
+aside .about-me img {
+    max-height: 100%;
+    height: 180px;
+}
+aside .about-me p {
+    margin: 1em 0;
+}
+aside .follow-me aside .follow-me i {
+    font-size: 1.8rem;
+}
+aside .follow-me i + i {
+    margin-left: 2em;
+}
+aside .post + .post {
+    margin: 2em 0;
+}
+aside .post img,
+aside form button {
+    width: 30%;
+}
+aside .post .details {
+    padding-left: 1em;
+}
+aside .post .details,
+aside form input {
+    width: 70%;
+}
+
+aside form input::placeholder {
+    color: var(--sub-black);
+}
+aside form input {
+    border-color: #f2f2f2;
+}
+aside form button {
+    border-color: #f2f2f2;
+    box-shadow: none;
+    color: var(--sub-black);
+}
+aside form button {
+    padding: 0 0.4em;
+    outline: none;
+}
+aside form button,
+aside form input {
+    font-family: "Montserrat", sans-serif;
+    padding: 0.3em;
+    font-size: 0.8em;
+    transition: 0.3s all ease-in-out;
+}
+aside form button:hover,
+aside form button:focus {
+    background-color: var(--main-color);
+    color: var(--main-gray);
+}
+@media (max-width: 950px) {
+    aside .post img,
+    aside form button {
+        width: 15%;
+    }
+    aside .post .details,
+    aside form input {
+        width: 85%;
+        padding-left: 1em;
+    }
+}
+.categories ul {
+    padding: 0;
+}
+.categories ul li {
+    padding: 0.4em;
+    font-family: "Montserrat", sans-serif;
+    border-bottom: var(--border-gray) solid 1px;
+}
+/* footer */
+footer {
+    padding: 2em 0;
+    background-color: #999;
+    color: var(--main-gray);
+}
+footer i {
+    font-size: 1.2rem;
+}
+footer i + i {
+    margin-left: 2em;
+}
+footer a,
+footer a:hover {
+    text-decoration: underline;
 }
